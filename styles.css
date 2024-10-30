@@ -1,0 +1,138 @@
+html {
+  height: 100vh;
+  overflow: hidden;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  margin:0;
+  background: #ffff;
+  perspective: 1px;
+  transform-style: preserve-3d;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.section1, .section2 {
+  width:100%;
+  min-height: 100vh;
+  position: relative;
+  transform-style: preserve-3d;
+}
+.section1::before {
+  content:"";
+  width:100%;
+  height: 100%;
+  position: absolute;
+  background: url("base.png") top center;
+  background-size: cover;
+  transform: translateZ(-1px) scale(2.2);
+  filter: blur(.5px);
+}
+.section1::after {
+  content:"";
+  width:100%;
+  height: 100%;
+  position: absolute;
+  background: url("outer-layer-blur.png") top center;
+  background-size: cover;
+  opacity: 0.96;
+}
+.section1 .text {
+  top:1%;
+  transform: translateZ(-0.5px) scale(1.5,1.6) translate(-63%,-25%);
+  text-align: center;
+}
+.section2 {
+  position: absolute;
+  background: url("base3.png") top center;
+  background-size: cover;
+
+  filter: blur(.5px);
+}
+.section3 {
+  background-color: rgba(255, 255, 255, 0.85);
+  overflow: hidden;
+  margin: 4%;
+}
+.text {
+  left:50%;
+  position: absolute;
+  font-family: 'Franklin Gothic Heavy';
+  font-size: 20vw;
+  color:white;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3),
+  5px 5px 70px rgba(215 215 215 / 71%);
+  transform: scale(1,1.1) translate(-50%, 10%);
+}
+
+.text2 {
+  left:50%;
+  position: absolute;
+  font-family: 'Franklin Gothic Heavy';
+  font-size: 15vw;
+  color:rgb(0, 0, 0);
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3),
+  5px 5px 70px rgba(255,255,255,0.5);
+  transform: scale(1,1.1) translate(-50%, 10%);
+}
+
+hr {
+  border: 2px solid rgb(163, 43, 179);
+  border-radius: 5px;
+}
+
+.padre-container {
+  display: flex;
+
+ }
+
+ .Bloque_Hijo--uno {
+  text-align: center;
+  top: 20px;
+  left: 30px;
+  width: 100%;
+  padding: 35px;
+  font-size: 25vw;
+}
+.Bloque_Hijo--dos {
+  text-align: center;
+  top: 20px;
+  left: 30px;
+  width: 100%;
+  padding: 35px;
+  font-size: 25vw;
+}
+
+.an {
+  animation-name: flo, rotate; /* Añadimos la animación de rotación */
+  animation-duration: 5s, 2s; /* Duración de cada animación */
+  animation-iteration-count: infinite; /* Repetición infinita */
+  animation-timing-function: ease-in-out, linear; /* Ajuste de las animaciones */
+  animation-direction: normal, alternate; /* Añadimos alternate a la rotación */
+  position: relative;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  justify-content: center;
+  transform: translateY(-580px); /* Ajusta el valor para subir las imágenes más o menos */
+}
+
+.an img {
+  width: auto;
+
+  flex-shrink: 0; /* Evita que se encojan */
+}
+
+
+@keyframes flo {
+  50% {
+      transform: translateX(30px);
+  }
+}
+
+@keyframes rotate {
+  100% {
+      transform: rotate(350deg); /* Rotación completa */
+  }
+}
